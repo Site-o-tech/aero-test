@@ -7,13 +7,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 use Aero\Test\Options;
 use Bitrix\Main\Loader;
 
-function aeroCleanString($string, $limit = false){
-    $string = strip_tags($string);
-    if($limit){
-        $string = substr($string, 0, $limit);
+function aeroCleanString($sStr, int $iLimit = 0) {
+    $sStr = strip_tags($sStr);
+    if( $iLimit > 0 ) {
+        $sStr = substr($sStr, 0, $iLimit);
     }
-    return $string;
-}
+    return $sStr;
+};
 
 try {
     if (!Loader::includeModule('iblock') || !Loader::includeModule('sale') || !Loader::includeModule('catalog') || !Loader::includeModule('aero.test')) 
