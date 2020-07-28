@@ -9,7 +9,6 @@ use Bitrix\Main\Loader;
 
 function aeroCleanString($string, $limit = false){
     $string = strip_tags($string);
-    $string = htmlspecialchars($string);
     if($limit){
         $string = substr($string, 0, $limit);
     }
